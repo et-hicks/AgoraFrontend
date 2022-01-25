@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Welcome to Agora Front End
 
-## Getting Started
+#### Reminders
+Intellectuals cannot be anonymous
 
-First, run the development server:
+#### The Completed
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### The TODOs
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Infrastructure for next deploying to Google Firebase Functions
+2. Automated testing in github actions
+3. Discover page - later - need more users and posts and threads
+   1. discover hashtags
+   2. discover topics
+   3. discover users
+4. comment follow etc on each thread
+   1. login once trying to submit
+5. sending a link or a thread
+   1. should not require a login
+   2. clicking users should not require a login
+6. Thread interactions
+   1. start:
+      1. likes
+      2. dislikes
+   2. later
+      1. clips
+      2. watching
+      3. etc
+7. group forming
+   1. made by intellectuals
+   2. places to post to
+   3. invite the group to post and comment and snippet on individual threads
+8. LATER - expanding into NBA finals and NBA experts
+   1. we need a stats engine
+   2. we need an engagement engine
+9. THREADS: recored who invites who to contribute
+   1. not who invites who as an intellectual
+10. Intersections of fields
+    1. nutrition intersects the history of food same as it intersects the economics of food scarcity
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Points
+Points for:
+1. sharing on social media
+2. commenting
+3. creating a thread
+4. following someone
+5. being followed by someone
+6. 
