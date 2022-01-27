@@ -7,7 +7,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
       <>
         <Sidebar />
-        <Component {...pageProps} />
+          <div className="agoraPages">
+              <Component {...pageProps} />
+          </div>
       </>
   )
 }

@@ -3,6 +3,20 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import StartAThread from "../components/buttons/StartAThread";
+import ThreadContentCard from "../components/cards/ThreadContentCard";
+
+// const SidebarText = ({ tsx }: any) => (
+//     <div className={styles.sidebarText}>
+//         { tsx }
+//     </div>
+// );
+
+const AgoraCommunity = () => (
+  <div className={styles.welcomeText}>
+    Agora Community Catalog of Content
+  </div>
+);
 
 const Home: NextPage = () => {
   return (
@@ -10,14 +24,14 @@ const Home: NextPage = () => {
     <Head>
         <title>Agora </title>
     </Head>
-      This is the first stuff written for Agora Frontned Read{' '}
-    <br />
-    <Link href="/about">
-        <a>about page</a>
-    </Link>
-    <Link href='/tailwind'>
-      <a>check out to see if tailwind is actually working</a>
-    </Link>
+        <>
+            <AgoraCommunity />
+            <StartAThread />
+        </>
+        <br />
+        <div>
+            <ThreadContentCard />
+        </div>
     </>
   )
 }

@@ -30,3 +30,11 @@ img {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+  .agoraPages {
+    @apply relative flex
+    px-52 py-10 justify-start
+  }
+}

@@ -3,21 +3,21 @@
 @layer components {
 
     .sidebar {
-        @apply fixed top-0 left-0
-        h-screen w-24 m-0 flex flex-col
+        @apply fixed top-0 left-0 z-50
+        h-screen w-48 m-0 flex flex-col
         bg-gray-100 shadow-lg text-white;
     }
 
     .sidebarText {
         @apply relative flex
         items-center justify-center text-gray-900
-        h-8 w-24 mt-4 mb-4 mx-auto;
+        h-8 w-48 mt-4 mb-4 mx-auto;
     }
 
     .sidebarButton {
         @apply relative flex
         items-center justify-center text-gray-600
-        h-8 w-24 mt-4 mb-4 mx-auto hover:bg-blue-600
+        h-8 w-40 mt-4 mb-4 mx-auto hover:bg-blue-600
         hover:text-white rounded-2xl hover:rounded-xl
         transition-all duration-200 ease-linear cursor-pointer;
     }

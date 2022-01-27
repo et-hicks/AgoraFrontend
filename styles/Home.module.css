@@ -114,3 +114,12 @@
     flex-direction: column;
   }
 }
+
+@tailwind components;
+
+@layer components {
+
+  .welcomeText {
+    @apply text-4xl font-bold font-sans;
+  }
+}
