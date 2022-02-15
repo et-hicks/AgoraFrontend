@@ -24,14 +24,26 @@ const Home: NextPage = () => {
     <Head>
         <title>Agora </title>
     </Head>
-        <div style={{display: "flex", alignItems: "center"}} >
+        <div >
             <AgoraCommunity />
             <StartAThread />
         </div>
-        <br />
-        {/*<div style={display}>*/}
+        <div className={styles.threadArray}>
             <ThreadContentCard />
-        {/*</div>*/}
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+            <ThreadContentCard />
+        </div>
     </div>
   )
 }
