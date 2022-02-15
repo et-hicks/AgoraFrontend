@@ -20,19 +20,19 @@ const AgoraCommunity = () => (
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div>
     <Head>
         <title>Agora </title>
     </Head>
-        <>
+        <div style={{display: "flex", alignItems: "center"}} >
             <AgoraCommunity />
             <StartAThread />
-        </>
-        <br />
-        <div>
-            <ThreadContentCard />
         </div>
-    </>
+        <br />
+        {/*<div style={display}>*/}
+            <ThreadContentCard />
+        {/*</div>*/}
+    </div>
   )
 }
 
