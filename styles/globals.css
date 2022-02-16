@@ -27,6 +27,11 @@ img {
   display: block;
 }
 
+/*.agoraMain {*/
+/*  display: flex;*/
+/*  flex-direction: row-reverse;*/
+/*}*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

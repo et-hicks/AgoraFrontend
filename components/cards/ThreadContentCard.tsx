@@ -20,19 +20,23 @@ export default function ThreadContentCard() {
         <div className={styles.contentCard}>
             <div className={styles.contentCardContainer}>
                 <div className={styles.imageContainer}>
-                   Image Container
+                   <Image src="/quokka.jpeg" width="300px" height="300px"/>
                 </div>
                 <div className={styles.contentContainer}>
                     <div className={styles.contentTitle}>
-                        Conversation TitleConversation TitleConversation TitleConversatiion Title
+                        Conversation Title
                     </div>
                     <div className={styles.contentDescription}>
-                        Description description descriptionescriptiiption description detion description
+                        Description description description description description
+                        description description description description
+                        description description description
+
+
                     </div>
                     <div className={styles.statsArray}>
-                        {/*<CardStats icon={<BsPeople size="20" /> } />*/}
-                        {/*<CardStats icon={<AiOutlineEye size="20" /> } />*/}
-                        {/*<CardStats icon={<BiMessageDetail size="20" /> } />*/}
+                        <CardStats icon={<BsPeople size="20" /> } />
+                        <CardStats icon={<AiOutlineEye size="20" /> } />
+                        <CardStats icon={<BiMessageDetail size="20" /> } />
                     </div>
                 </div>
             </div>

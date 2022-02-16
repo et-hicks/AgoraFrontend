@@ -1,7 +1,15 @@
+/*.variables {*/
+/*    --card-width: 300vw;*/
+/*    --card-height: 12vh;*/
+/*    --content-container-height: 10vh;*/
+/*    --testing-things: "aqua";*/
+/*}*/
+
 .contentCard {
-    background-color: red;
+    /*background-color: red;*/
     height: 20vh;
-    width: 40vw;
+    width: 28vw;
+    border: 1px solid black;
     box-shadow: 5px 2px 10px lightgrey;
     border-radius: 2vw;
     display: flex;
@@ -9,56 +17,62 @@
 }
 
 .contentCardContainer {
-    border: 4px dotted black;
+    /*border: 4px dotted black;*/
     display: flex;
     flex-direction: row;
     height: 18vh;
-    width: 38vw;
+    width: 26vw;
     margin: auto;
 }
 
 .imageContainer {
     height: 18vh;
-    width: 12vw;
-    border: 4px solid green;
+    width: 10vw;
+    border-radius: 2vw;
+    overflow: hidden;
+    /*border: 4px solid green;*/
 }
 
 .contentContainer {
     height: 18vh;
-    width: 26vw;
-    border: 4px solid black;
+    width: 16vw;
+    /*border: 4px solid purple;*/
     display: flex;
     flex-direction: column;
     align-items: baseline;
     justify-content: space-around;
+    padding-left: 0.5vw;
 }
 
 .contentTitle {
     height: 5vh;
-    width: 26vw;
-    border: 4px solid grey;
+    width: 16vw;
+    /*border: 4px solid grey;*/
+    padding-top: 0.5vh;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: anywhere;
     display: block;
     line-height: 1em; /* a */
+    font-size: 2.5vh;
+    font-weight: bold;
 }
 
 .contentDescription {
     height: 9vh;
-    width: 26vw;
-    border: 4px dotted grey;
+    width: 16vw;
+    /*border: 4px dotted grey;*/
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: anywhere;
-    display: block;
+    /*display: block;*/
     line-height: 1em; /* a */
 }
 
 .statsArray {
     height: 5vh;
-    width: 26vw;
-    border: 4px dotted blue;
+    width: 16vw;
+    /*border: 4px dashed orange;*/
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
