@@ -34,9 +34,9 @@ export default function ThreadContentCard() {
 
                     </div>
                     <div className={styles.statsArray}>
-                        <CardStats icon={<BsPeople size="20" /> } />
-                        <CardStats icon={<AiOutlineEye size="20" /> } />
-                        <CardStats icon={<BiMessageDetail size="20" /> } />
+                        {/*<CardStats icon={<BsPeople size="20" /> } />*/}
+                        {/*<CardStats icon={<AiOutlineEye size="20" /> } />*/}
+                        {/*<CardStats icon={<BiMessageDetail size="20" /> } />*/}
                     </div>
                 </div>
             </div>

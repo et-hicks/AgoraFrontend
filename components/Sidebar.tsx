@@ -100,7 +100,7 @@ export default function Sidebar() {
             <br />
             <br />
             <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
-                <TrendingCategories category={TrendingCategory.Hashtag} />
+            <TrendingCategories category={TrendingCategory.Hashtag} />
             <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
             <TrendingCategories category={TrendingCategory.Topics} />
 
