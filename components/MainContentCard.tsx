@@ -1,6 +1,8 @@
 import styles from '../styles/MainContentCard.module.css'
 import Image from "next/image";
-import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
+import Thread from "./threads/Thread";
+import ExtentContent from "./buttons/ExtendContent";
+// import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
 
 const CardStats = ({ icon, number = 69 }: any) => (
     <div>
@@ -63,9 +65,9 @@ const User = () => {
                 paddingLeft: "1vw",
                 width: "10vw"
             }}>
-                <CardStats icon={<BsPeople size="20" /> } />
-                <CardStats icon={<AiOutlineEye size="20" /> } />
-                <CardStats icon={<BiMessageDetail size="20" /> } />
+                {/*<CardStats icon={<BsPeople size="20" /> } />*/}
+                {/*<CardStats icon={<AiOutlineEye size="20" /> } />*/}
+                {/*<CardStats icon={<BiMessageDetail size="20" /> } />*/}
             </div>
         </div>
     );
@@ -128,27 +130,39 @@ export default function MainContentCard() {
             <div style={{
                 // border: "4px dashed blue",
                 // height: "38vh",
-                width:  "48vw",
-                margin: "auto"
+                // width:  "48vw",
+                margin: "auto",
+                padding: "2vh 5vw"
             }}>
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Threa
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Ma Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussionin Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Ma Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussionin Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Ma Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussionin Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                d Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Ma Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
-                Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussionin Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion Main Thread Discussion
+                Data collected over a period of 10 yr is presented on the distribution of a small
+                wallaby, the quokka, on the isolated West End portion of Rottnest I., Western
+                Australia. The density of quokkas in each locality varied with the density of grasses that
+                composed the major portion of their diet. Generally, the animals are non-gregarious
+                and each quokka has a home range of about 10 ac. The home ranges of groups of
+                25-150 individuals overlap to form group territories. The boundaries of the group
+                territories are stable and in places coincide with topographical features. Young quokkas
+                usually remain in their natal group territory and rarely do permanent changes in group
+                affiliation by animals of any age occur even after the population of adjacent territories
+                has been greatly reduced.
+            </div>
+            <div style={{
+                border: "4px dashed blue",
+                // height: "35vh",
+                // width:  "30vw",
+                margin: "auto",
+                // borderRadius: "4vh",
+                // paddingBottom: "3vh",
+                overflow: "hidden",
+                display: "flex",
+                // alignItems: "center",
+                // justifyItems: "center",
+                // justifySelf: "center",
+                // alignSelf: "center"
+            }}>
+                <ExtentContent />
+            </div>
+            <div>
+                <Thread />
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import styles from '../../styles/Buttons.module.css';
+import styles from '../../styles/Buttons/Buttons.module.css';
 
 export default function StartAThread () {
 

@@ -1,6 +1,6 @@
 import styles from '../styles/Sidebar.module.css'
-import {FaHome} from 'react-icons/fa';
-import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
+// import {FaHome} from 'react-icons/fa';
+// import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
 
 // TODO: Place the sidebar component in a different area of the codebase as the code expands (for codebase scalability reasons)
 
@@ -94,14 +94,14 @@ export default function Sidebar() {
     return (
         <div className={styles.sidebarContainer}>
             <AgoraLogoComponent />
-            <SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>
-            <SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>
-            <SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>
+            {/*<SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>*/}
+            {/*<SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>*/}
+            {/*<SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>*/}
             <br />
             <br />
-            <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
-            <TrendingCategories category={TrendingCategory.Hashtag} />
-            <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
+            {/*<SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>*/}
+            {/*<TrendingCategories category={TrendingCategory.Hashtag} />*/}
+            {/*<SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>*/}
             <TrendingCategories category={TrendingCategory.Topics} />
 
         </div>

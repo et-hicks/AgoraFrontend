@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
+// import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
 import quokka from '../../public/quokka.jpeg'
 import styles from '../../styles/ContentCard.module.css'
 
