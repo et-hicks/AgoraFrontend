@@ -4,7 +4,7 @@ import {FiArrowRight} from "react-icons/all";
 
 
 export default function ExtentContent() {
-    
+
     const clicky = () => {
         console.log("clicked")
     }
@@ -17,7 +17,7 @@ export default function ExtentContent() {
             <span className={styles.notVisible}>
                 69-420
             </span>
-            <FiArrowRight size="20"/>
+            {/*<FiArrowRight size="20"/>*/}
         </div>
     );
 }
