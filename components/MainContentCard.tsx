@@ -2,7 +2,10 @@ import styles from '../styles/MainContentCard.module.css'
 import Image from "next/image";
 import Thread from "./threads/Thread";
 import ExtentContent from "./buttons/ExtendContent";
+import dynamic from "next/dynamic";
 // import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
+
+// const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
 
 const CardStats = ({ icon, number = 69 }: any) => (
     <div>
@@ -77,26 +80,31 @@ const ThreadTitle = () => (
     <div style={{
         display: "flex",
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        paddingLeft: "2vw"
     }}>
         <div style={{
             // margin: "auto",
             marginTop: "1vh",
-            fontSize: "5vh",
+            fontSize: "30px",
             fontWeight: "bold",
         }}>
-            Thread Title
+            POPULATION DYNAMICS OF THE QUOKKA, SETONIX BRACHYURUS,
+            ON THE WEST END OF ROTTNEST I., WESTERN AUSTRALIA
         </div>
     </div>
 );
 
-export default function MainContentCard() {
+export default function MainContentCard({ extendContentProps } : any) {
 
+    console.log("main content props:", extendContentProps);
+    const {showThreads, _} = extendContentProps
     return (
         <div style={{
             borderLeft: "2px solid lightgrey",
             height: "98vh",
-            width: "52vw",
+            width: `${showThreads ? "52vw" : "40vw"}`,
+            // width: "52vw",
             overflow: "scroll"
         }} className={styles.testing}>
             <div style={{
@@ -114,15 +122,15 @@ export default function MainContentCard() {
                 // border: "4px dashed darkgreen",
                 marginTop: "1vh",
                 height: "6vh",
-                width:  "48vw",
+                width:  "inherit",
                 margin: "auto"
             }}>
                 <User />
             </div>
             <div style={{
                 // border: "4px dashed purple",
-                height: "10vh",
-                width:  "48vw",
+                // height: "10vh",
+                width:  "inherit",
                 margin: "auto"
             }}>
                 <ThreadTitle />
@@ -146,7 +154,7 @@ export default function MainContentCard() {
                 has been greatly reduced.
             </div>
             <div style={{
-                border: "4px dashed blue",
+                // border: "4px dashed blue",
                 // height: "35vh",
                 // width:  "30vw",
                 margin: "auto",
@@ -158,10 +166,11 @@ export default function MainContentCard() {
                 // justifyItems: "center",
                 // justifySelf: "center",
                 // alignSelf: "center"
+                paddingBottom: "2vh"
             }}>
-                <ExtentContent />
+                <ExtentContent props={extendContentProps}/>
             </div>
-            <div>
+            <div >
                 <Thread />
             </div>
         </div>

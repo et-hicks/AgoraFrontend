@@ -5,7 +5,10 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import ThreadContentCard from "../components/cards/ThreadContentCard";
 import MainContentCard from "../components/MainContentCard";
+import {useState} from "react";
+import dynamic from "next/dynamic";
 
+const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
 
 const AgoraCommunity = () => (
     <div style={{
@@ -47,16 +50,8 @@ const StartAThread = () => (
     </div>
 );
 
-const Home: NextPage = () => {
-  return (
-    <div style={{
-        // border: "3px dotted darkgrey",
-        display: "flex",
-        flexDirection: "row"
-    }}>
-    <Head>
-        <title>Agora </title>
-    </Head>
+const ColumnOfThreads = () => {
+    return (
         <div >
             <div style={{
                 // border: "3px dotted darkblue",
@@ -87,9 +82,50 @@ const Home: NextPage = () => {
                 <ThreadContentCard />
             </div>
         </div>
-        <MainContentCard />
-    </div>
-  )
+    );
+}
+
+const Home: NextPage = () => {
+    const [showThreads, setShowThreads] = useState(true);
+
+    // const columnStyle = {
+    //     display: showThreads ? "flex" : "hidden",
+    // };
+
+    const extendContentProps = {
+        showThreads,
+        setShowThreads
+    };
+
+    return (
+        <div style={{
+            // border: "3px dotted darkgrey",
+            display: "flex",
+            flexDirection: "row"
+        }}>
+        <Head>
+            <title>Agora </title>
+        </Head>
+            <div style={{
+                // border: `${showThreads ? "3px solid black" : "3px solid green"}`,
+                display: `${showThreads ? "flex" : "none"}`
+            }}>
+                <ColumnOfThreads />
+            </div>
+            <div>
+                <MainContentCard extendContentProps={extendContentProps}/>
+            </div>
+            <div style={{
+                border: `${!showThreads ? "3px solid black" : "3px solid green"}`,
+                display: `${!showThreads ? "flex" : "none"}`,
+                width: "auto",
+                height: "98vh",
+                overflow: "scroll"
+            }}>
+                <RenderPDF />
+            </div>
+        </div>
+    )
 }
 
 export default Home
