@@ -1,19 +1,25 @@
 import styles from "../../styles/Buttons/ExtendContent.module.scss"
 import {FiArrowRight} from "react-icons/all";
+import {show, hide, invert} from "../../states/showThreads"
+import { useSelector, useDispatch } from 'react-redux'
+import {RootState} from "@reduxjs/toolkit/dist/query/core/apiState";
+import {AppState} from "../../app/store";
 
 
-
-export default function ExtentContent({ props }: any) {
+export default function ExtentContent() {
     // TODO: replace this with redux state management
+
+    const dispatch = useDispatch()
 
     const clicky = () => {
         console.log("clicked")
         // props.setShowThreads.setShowThreads(!props.showThreads.showThreads)
-        props.setShowThreads(!props.showThreads)
+        // props.setShowThreads(!props.showThreads);
+        dispatch(invert());
     }
 
-    console.log("from the extend content props are:", props);
-    console.log("show threads:", props.showThreads);
+    // console.log("from the extend content props are:", props);
+    // console.log("show threads:", props.showThreads);
 
     return (
         <div className={styles.extendContentContainer} onClick={clicky}>

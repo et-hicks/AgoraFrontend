@@ -3,6 +3,8 @@ import Image from "next/image";
 import Thread from "./threads/Thread";
 import ExtentContent from "./buttons/ExtendContent";
 import dynamic from "next/dynamic";
+import {useSelector} from "react-redux";
+import {AppState} from "../app/store";
 // import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
 
 // const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
@@ -95,15 +97,14 @@ const ThreadTitle = () => (
     </div>
 );
 
-export default function MainContentCard({ extendContentProps } : any) {
+export default function MainContentCard() {
+    const expandContent = useSelector((state: AppState) => state.expander.expand);
 
-    console.log("main content props:", extendContentProps);
-    const {showThreads, _} = extendContentProps
     return (
         <div style={{
             borderLeft: "2px solid lightgrey",
             height: "98vh",
-            width: `${showThreads ? "52vw" : "40vw"}`,
+            width: `${expandContent ? "52vw" : "40vw"}`,
             // width: "52vw",
             overflow: "scroll"
         }} className={styles.testing}>
@@ -168,7 +169,7 @@ export default function MainContentCard({ extendContentProps } : any) {
                 // alignSelf: "center"
                 paddingBottom: "2vh"
             }}>
-                <ExtentContent props={extendContentProps}/>
+                <ExtentContent />
             </div>
             <div >
                 <Thread />

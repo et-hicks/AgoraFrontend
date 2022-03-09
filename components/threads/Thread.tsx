@@ -1,6 +1,10 @@
 import styles from '../../styles/Thread/Thread.module.scss'
 
 export default function Thread() {
+
+    // TODO: install react query
+    // Seems like a pretty cool thing to do
+
     return (
         <div>
             <div className={styles.threadContainer}>

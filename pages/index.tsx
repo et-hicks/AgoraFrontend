@@ -7,6 +7,8 @@ import ThreadContentCard from "../components/cards/ThreadContentCard";
 import MainContentCard from "../components/MainContentCard";
 import {useState} from "react";
 import dynamic from "next/dynamic";
+import {useSelector} from "react-redux";
+import {AppState} from "../app/store";
 
 const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
 
@@ -86,16 +88,9 @@ const ColumnOfThreads = () => {
 }
 
 const Home: NextPage = () => {
-    const [showThreads, setShowThreads] = useState(true);
 
-    // const columnStyle = {
-    //     display: showThreads ? "flex" : "hidden",
-    // };
+    const showThreads = useSelector((state: AppState) => state.expander.expand);
 
-    const extendContentProps = {
-        showThreads,
-        setShowThreads
-    };
 
     return (
         <div style={{
@@ -104,7 +99,7 @@ const Home: NextPage = () => {
             flexDirection: "row"
         }}>
         <Head>
-            <title>Agora </title>
+            <title> Agora </title>
         </Head>
             <div style={{
                 // border: `${showThreads ? "3px solid black" : "3px solid green"}`,
@@ -113,10 +108,10 @@ const Home: NextPage = () => {
                 <ColumnOfThreads />
             </div>
             <div>
-                <MainContentCard extendContentProps={extendContentProps}/>
+                <MainContentCard />
             </div>
             <div style={{
-                border: `${!showThreads ? "3px solid black" : "3px solid green"}`,
+                border: `${showThreads ? "3px solid black" : "3px solid green"}`,
                 display: `${!showThreads ? "flex" : "none"}`,
                 width: "auto",
                 height: "98vh",
