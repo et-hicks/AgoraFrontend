@@ -3,14 +3,15 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import ThreadContentCard from "../components/cards/ThreadContentCard";
-import MainContentCard from "../components/MainContentCard";
+import ThreadContentCard from "../components/cards/threads/ThreadContentCard";
+import Article from "../components/article/Article";
 import {useState} from "react";
 import dynamic from "next/dynamic";
 import {useSelector} from "react-redux";
 import {AppState} from "../app/store";
+import Discussion from "../components/discussion/Discussion";
 
-const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
+const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
 const AgoraCommunity = () => (
     <div style={{
@@ -107,8 +108,12 @@ const Home: NextPage = () => {
             }}>
                 <ColumnOfThreads />
             </div>
-            <div>
-                <MainContentCard />
+            <div style={{
+                width: "54vw",
+                // border: "3px dashed brown"
+            }}>
+                {/*<Article />*/}
+                <Discussion />
             </div>
             <div style={{
                 border: `${showThreads ? "3px solid black" : "3px solid green"}`,

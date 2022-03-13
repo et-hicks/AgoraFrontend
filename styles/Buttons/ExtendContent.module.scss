@@ -1,9 +1,9 @@
 .extendContentContainer {
     border: 2px solid black;
     border-radius: 10px;
-    overflow: hidden;
-    margin: 0.5vh 0.5vw;
-    padding: .75vh 1vw;
+//     overflow: hidden;
+//     margin: 0.5vh 0.5vw;
+//     padding: .75vh 1vw;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -11,6 +11,7 @@
     background: #4B12F5;
     color: white;
     box-shadow: 5px 5px 5px 2px gray;
+    height: 4vh;
     &:hover {
         background: white;
         color: #4B12F5;
@@ -22,6 +23,7 @@
 //     width: 0.5wh;
 //     height: 0.1vh;
 //     margin: 0.5vh;
+
     visibility: hidden;
     color: inherit;
     font-size: 4px;
@@ -33,5 +35,5 @@
 //     border: 2px solid green;
 //     margin: 0.5vh 0.5vw;
 //     padding: 0.5vh 0.5vw;
-
+//     height: inherit;
 }

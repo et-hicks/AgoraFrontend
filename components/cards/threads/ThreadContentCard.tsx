@@ -1,18 +1,19 @@
 import Image from "next/image";
 // import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
-import quokka from '../../public/quokka.jpeg'
-import styles from '../../styles/ContentCard.module.css'
 
-const CardStats = ({ icon, number = 69 }: any) => (
-    <div>
-        <div>
-            { icon }
-        </div>
-        <div>
-            { number }
-        </div>
-    </div>
+import styles from '../../../styles/ContentCard.module.css'
+import dynamic from "next/dynamic";
+
+const DynamicCardStatsPeople = dynamic(() =>
+    import('../info/CardStats').then((module: any) => module.CardStatsPeople), {ssr: false}
 );
+const DynamicCardStatsOutlineEye = dynamic(() =>
+    import('../info/CardStats').then((module: any) => module.CardStatsOutlineEye), {ssr: false}
+);
+const DynamicCardStatsMessageDetail = dynamic(() =>
+    import('../info/CardStats').then((module: any) => module.CardStatsMessageDetail), {ssr: false}
+);
+
 
 export default function ThreadContentCard() {
     // huh???
@@ -27,16 +28,14 @@ export default function ThreadContentCard() {
                         Conversation Title
                     </div>
                     <div className={styles.contentDescription}>
-                        Description description description description description
-                        description description description description
+                        Description description description
                         description description description
-
 
                     </div>
                     <div className={styles.statsArray}>
-                        {/*<CardStats icon={<BsPeople size="20" /> } />*/}
-                        {/*<CardStats icon={<AiOutlineEye size="20" /> } />*/}
-                        {/*<CardStats icon={<BiMessageDetail size="20" /> } />*/}
+                        <DynamicCardStatsPeople />
+                        <DynamicCardStatsOutlineEye />
+                        <DynamicCardStatsMessageDetail />
                     </div>
                 </div>
             </div>

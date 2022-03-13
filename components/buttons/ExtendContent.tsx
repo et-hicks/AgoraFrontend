@@ -18,7 +18,7 @@ export default function ExtentContent() {
         dispatch(invert());
     }
 
-    // console.log("from the extend content props are:", props);
+    // console.log("from the extend attachments props are:", props);
     // console.log("show threads:", props.showThreads);
 
     return (

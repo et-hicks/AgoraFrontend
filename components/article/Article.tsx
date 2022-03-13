@@ -1,13 +1,14 @@
-import styles from '../styles/MainContentCard.module.css'
+import styles from '../../styles/Article.module.css'
 import Image from "next/image";
-import Thread from "./threads/Thread";
-import ExtentContent from "./buttons/ExtendContent";
+import Thread from "../threads/Thread";
+import ExtentContent from "../buttons/ExtendContent";
 import dynamic from "next/dynamic";
 import {useSelector} from "react-redux";
-import {AppState} from "../app/store";
+import {AppState} from "../../app/store";
+import UserBanner from "../cards/user/UserBanner";
 // import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
 
-// const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
+// const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
 const CardStats = ({ icon, number = 69 }: any) => (
     <div>
@@ -21,62 +22,7 @@ const CardStats = ({ icon, number = 69 }: any) => (
 );
 
 
-const User = () => {
-    return (
-        <div style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-        }}>
-            <div style={{
-                margin: "auto",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-start",
-                alignContent: "center",
-                justifyItems: "center",
-                width: "20vw",
-            }}>
-              <div style={{
-                  marginRight: "1vw",
-                  borderRadius: "10px",
-                  overflow: "hidden",
-                  height: "60px",
-                  border: "2px solid black",
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  alignItems: "flex-start",
-                  // alignSelf: "center"
-              }}>
-                  <Image src="/quokka.jpeg"
-                         height="60px"
-                         width="60px"
-                  />
-              </div>
-                <div style={{
-                    marginTop: "1vh",
-                    fontSize: "3vh",
 
-                }}>
-                    Ethan Hicks
-                </div>
-            </div>
-            <div style={{
-                margin: "auto",
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-evenly",
-                paddingRight: "1vw",
-                paddingLeft: "1vw",
-                width: "10vw"
-            }}>
-                {/*<CardStats icon={<BsPeople size="20" /> } />*/}
-                {/*<CardStats icon={<AiOutlineEye size="20" /> } />*/}
-                {/*<CardStats icon={<BiMessageDetail size="20" /> } />*/}
-            </div>
-        </div>
-    );
-}
 
 const ThreadTitle = () => (
     <div style={{
@@ -97,7 +43,7 @@ const ThreadTitle = () => (
     </div>
 );
 
-export default function MainContentCard() {
+export default function Article() {
     const expandContent = useSelector((state: AppState) => state.expander.expand);
 
     return (
@@ -126,7 +72,7 @@ export default function MainContentCard() {
                 width:  "inherit",
                 margin: "auto"
             }}>
-                <User />
+                <UserBanner  userId={"Ethan Hicks"}/>
             </div>
             <div style={{
                 // border: "4px dashed purple",

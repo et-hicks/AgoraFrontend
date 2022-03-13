@@ -4,9 +4,9 @@ import Sidebar from "../components/Sidebar";
 import { Provider } from 'react-redux'
 import store from "../app/store";
 import dynamic from "next/dynamic";
-// import RenderPDF from "../components/content/RenderPDF";
+// import RenderPDF from "../components/attachments/RenderPDF";
 
-// const RenderPDF = dynamic(import("../components/content/RenderPDF"), {ssr: false})
+// const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
 // This is a perfect place to put the header and the sidebar
 function MyApp({ Component, pageProps }: AppProps) {
