@@ -88,10 +88,8 @@ const ColumnOfThreads = () => {
     );
 }
 
-const Home: NextPage = () => {
-
+const HomePage = () => {
     const showThreads = useSelector((state: AppState) => state.expander.expand);
-
 
     return (
         <div style={{
@@ -99,9 +97,9 @@ const Home: NextPage = () => {
             display: "flex",
             flexDirection: "row"
         }}>
-        <Head>
-            <title> Agora </title>
-        </Head>
+            <Head>
+                <title> Agora </title>
+            </Head>
             <div style={{
                 // border: `${showThreads ? "3px solid black" : "3px solid green"}`,
                 display: `${showThreads ? "flex" : "none"}`
@@ -113,7 +111,7 @@ const Home: NextPage = () => {
                 // border: "3px dashed brown"
             }}>
                 {/*<Article />*/}
-                <Discussion />
+                <Discussion /> {/*TODO: This should be revisited*/}
             </div>
             <div style={{
                 border: `${showThreads ? "3px solid black" : "3px solid green"}`,
@@ -124,6 +122,183 @@ const Home: NextPage = () => {
             }}>
                 <RenderPDF />
             </div>
+        </div>
+    );
+}
+
+const ProfileHead = () => {
+    return (
+        <div style={{
+            border: "3px solid black",
+            width: "400px",
+            height: "400px"
+        }}>
+
+        </div>
+    );
+}
+
+const ProfileTabs = () => {
+    return (
+        <div style={{
+            border: "3px solid black",
+            width: "65vw",
+            height: "20vh",
+            position: "sticky",
+            top: "0",
+        }}>
+
+        </div>
+    );
+}
+
+const UserGeneratedContent = () => {
+    return (
+        <div style={{
+            border: "3px solid lightgrey",
+            width: "65vw",
+            height: "10vh",
+        }}>
+
+        </div>
+    )
+}
+
+const UserPage = () => {
+
+    const [user, setUser] = useState("Ethan Hicks")
+
+    return (
+        <div style={{
+            display: "grid",
+            // gridTemplateColumns: "repeat(5, 16rem)",
+            // gridTemplateRows: "repeat(5, 16rem)",
+            gridAutoColumns: "200px",
+            gridTemplateAreas: "\"a a .\"\n" +
+                "            \"a a .\"\n" +
+                "            \". b c\"",
+            gap: "10px"
+            // flexDirection: "column"
+        }}>
+            <Head>
+                <title> { user } </title>
+            </Head>
+            <div className={styles.gridItem}>
+                item 1
+            </div>
+            <div className={styles.gridItem}>
+                item 2
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+            <div className={styles.gridItem}>
+                item 3
+            </div >
+
+
+
+            <div className={styles.gridItem}>
+                item 4
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            <div className={styles.gridItem}>
+                item 5
+            </div>
+            {/*<div style={{*/}
+            {/*    display: "flex"*/}
+            {/*}}>*/}
+            {/*    <ProfileHead />*/}
+            {/*    <ProfileTabs />*/}
+            {/*</div>*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+            {/*<UserGeneratedContent />*/}
+
+        </div>
+    );
+}
+
+const Home: NextPage = () => {
+
+
+
+    return (
+        <div>
+            {/*<HomePage />*/}
+            <UserPage />
         </div>
     )
 }

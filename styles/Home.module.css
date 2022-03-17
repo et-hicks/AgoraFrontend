@@ -133,3 +133,7 @@
   margin: 1vw 1vh;
   overflow: scroll;
 }
+
+.gridItem {
+  border: 2px solid black;
+}
