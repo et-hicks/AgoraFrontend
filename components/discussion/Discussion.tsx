@@ -37,11 +37,23 @@ const ContributionContainer = ({userId}: UserBannerProps) => {
             </div>
             <div style={{
                 margin: "auto",
-                fontSize: "2vh",
+                // fontSize: "2vh",
                 // border: "2px solid black",
                 paddingLeft: "5vw",
-                paddingRight: "1vw"
+                paddingRight: "1vw",
+                fontSize: "1rem",
+                lineHeight: "1.5em",
+                fontFamily: "Roboto",
             }}>
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
+                Use react query to load the bottom 10 discussions, appending to the top as people scroll up
                 Use react query to load the bottom 10 discussions, appending to the top as people scroll up
                 Use react query to load the bottom 10 discussions, appending to the top as people scroll up
                 Use react query to load the bottom 10 discussions, appending to the top as people scroll up
@@ -161,9 +173,29 @@ const ConversationHeader = () => {
 
 const Contribute = () => {
     return (
-        <div>
+        <div style={{
+            // border: "3px solid black",
+            margin: "auto"
+
+        }}>
             <form>
-                <textarea name={"writeReply"} cols={50} rows={5} placeholder={"Write A Reply"}/>
+                <textarea style={{
+                    fontSize: "1rem",
+                    lineHeight: "1.5em",
+                    fontFamily: "Roboto",
+                    outline: "none",
+                    // outline: `1px solid black`,
+                    overflow: "auto",
+                    resize: "vertical",
+                    minHeight: "10vh",
+                    maxHeight: "50vh",
+                    width: "35vw",
+                    // borderRadius: "10px",
+                }}
+                    name={"writeReply"}
+                    cols={50}
+                    rows={5}
+                    placeholder={" Post in the discussion"}/>
             </form>
         </div>
     )
@@ -175,15 +207,19 @@ const Clickable = () => {
             display: "flex",
             flexDirection: "row",
             margin: "auto",
-            border: "3px solid blue",
-            width: "fit-content"
+            padding: "0.5vw 0.5vh",
+            // border: "3px solid blue",
+            width: "50vw",
+            justifyContent: "space-between",
+            borderRadius: "10px",
+            boxShadow: "15px 10px 20px 1px lightgray",
+            position: "sticky",
+            top: "0",
+            background: "#FBF9FF",
+            zIndex: "999"
         }}>
             <Contribute />
-            <div>
-                <GenericButton displayText={"Submit"} />
-                <br />
-                <GenericButton displayText={"Comments"} />
-            </div>
+            <GenericButton displayText={"Submit"} />
         </div>
     )
 }
@@ -207,6 +243,7 @@ export default function Discussion() {
             <ConversationHeader />
             <DiscussionStats />
             <WhoIsHere />
+            <br />
             <Clickable />
             <br />
             <DiscussionContributions />

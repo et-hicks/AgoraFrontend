@@ -3,8 +3,8 @@ import {GenericButtonProps} from "../../@types";
 
 export default function GenericButton({displayText = "Start a Thread"}: GenericButtonProps) {
     return (
-        <div >
-            <div className={styles.startAThread}>
+        <div className={styles.genericButtonContainer}>
+            <div>
                 { displayText }
             </div>
         </div>

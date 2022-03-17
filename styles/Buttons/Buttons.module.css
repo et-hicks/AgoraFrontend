@@ -12,3 +12,21 @@
     }
 }
 
+.genericButtonContainer {
+    border-radius: 30px;
+    border: 3px solid #4B12F5;
+    /*margin-left: auto;*/
+    /*margin-bottom: auto;*/
+    /*margin-top: auto;*/
+    margin: auto;
+    padding: 1% 2%;
+    color: black;
+}
+.genericButtonContainer:hover {
+    border: 3px solid black;
+    color: white;
+    background-color: #4B12F5;
+    box-shadow: 2px 2px 2px 2px gray;
+    cursor: pointer;
+}
+
