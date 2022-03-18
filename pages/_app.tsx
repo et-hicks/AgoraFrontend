@@ -12,7 +12,12 @@ import dynamic from "next/dynamic";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
       <Provider store={store}>
-          <div style={{display: "flex",  flexDirection: "row", backgroundColor: "#FBF9FF", height: "100vh"}}>
+          <div style={{
+              display: "flex",
+              flexDirection: "row",
+              backgroundColor: "#FBF9FF",
+              // height: "100vh"
+          }}>
               <Sidebar />
                {/*<div style={{ height: "99vh", width: "85vw"}} >*/}
               <div >
@@ -21,9 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
       </Provider>
   );
-  //   return (
-  //       <RenderPDF />
-  //   );
 }
 
 export default MyApp

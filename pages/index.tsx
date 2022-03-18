@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import {useSelector} from "react-redux";
 import {AppState} from "../app/store";
 import Discussion from "../components/discussion/Discussion";
+import GenericButton from "../components/buttons/GenericButton";
 
 const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
@@ -126,13 +127,96 @@ const HomePage = () => {
     );
 }
 
-const ProfileHead = () => {
+const ProfilePicture = () => {
     return (
         <div style={{
             border: "3px solid black",
-            width: "400px",
-            height: "400px"
+            width: "inherit",
+            height: "350px",
+            borderRadius: "10px"
         }}>
+
+        </div>
+    );
+}
+
+const UserBio = () => {
+
+    // TODO: When the bio is too long have it pop out into a more approachable size
+    // TODO: turn this into a pop up
+    return (
+        <div style={{
+            width: "inherit",
+            height: "fit-content",
+            padding: "1.25vh 1.5vw",
+            fontSize: ".8em"
+        }}>
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+            Follow Thread
+        </div>
+    );
+}
+
+const ProfileColumn = () => {
+    return (
+        <div style={{
+            // TODO: set a min and a max height here
+            border: "3px solid black",
+            width: "20vw",
+            height: "100vh",
+            overflow: "scroll"
+        }}>
+            <ProfilePicture />
+            <UserBio />
+            <UsersMostCommonTopics />
+        </div>
+    );
+}
+
+const UsersMostCommonTopics = () => {
+    const user = "Ethan Hicks";
+    return (
+        <div>
+            <div>
+                { user } most commonly posts in
+            </div>
+            <GenericButton displayText={"Machine Learning"} />
+            <GenericButton displayText={"Political Science"} />
+            <GenericButton displayText={"Economics"} />
+            <br />
+            <GenericButton displayText={"Explore all topics"} />
+            <GenericButton displayText={"Explore all hashtags"} />
+        </div>
+    );
+}
+
+const ContentColumn = () => {
+    return (
+        <div style={{
+            border: "3px solid black",
+            width: "65vw",
+            height: "100vh"
+        }}>
+
+
 
         </div>
     );
@@ -142,12 +226,24 @@ const ProfileTabs = () => {
     return (
         <div style={{
             border: "3px solid black",
-            width: "65vw",
-            height: "20vh",
+            width: "85vw",
+            // height: "10vh",
             position: "sticky",
             top: "0",
+            margin: "auto"
         }}>
-
+            <div className={styles.tab}>
+                <button className={styles.tablinks}> Profile </button>
+                <button className={styles.tablinks}> Topics & Hashtags</button>
+                <button className={styles.tablinks} > Filter </button>
+                <button className={styles.tablinks} > Search </button>
+            </div>
+            <div>
+                Added Filters and other changes search term
+            </div>
+            <div>
+                This can be hidden
+            </div>
         </div>
     );
 }
@@ -170,122 +266,24 @@ const UserPage = () => {
 
     return (
         <div style={{
-            display: "grid",
+            display: "flex",
             // gridTemplateColumns: "repeat(5, 16rem)",
             // gridTemplateRows: "repeat(5, 16rem)",
-            gridAutoColumns: "200px",
-            gridTemplateAreas: "\"a a .\"\n" +
-                "            \"a a .\"\n" +
-                "            \". b c\"",
-            gap: "10px"
-            // flexDirection: "column"
+            gap: "10px",
+            flexDirection: "column"
         }}>
             <Head>
                 <title> { user } </title>
             </Head>
-            <div className={styles.gridItem}>
-                item 1
-            </div>
-            <div className={styles.gridItem}>
-                item 2
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
+            <ProfileTabs />
 
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-            <div className={styles.gridItem}>
-                item 3
-            </div >
-
-
-
-            <div className={styles.gridItem}>
-                item 4
+            <div style={{
+                display: "flex",
+                flexDirection: "row"
+            }}>
+                <ContentColumn />
+                <ProfileColumn />
             </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            <div className={styles.gridItem}>
-                item 5
-            </div>
-            {/*<div style={{*/}
-            {/*    display: "flex"*/}
-            {/*}}>*/}
-            {/*    <ProfileHead />*/}
-            {/*    <ProfileTabs />*/}
-            {/*</div>*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
-            {/*<UserGeneratedContent />*/}
 
         </div>
     );

@@ -21,6 +21,7 @@
     margin: auto;
     padding: 1% 2%;
     color: black;
+    transition: 0.2s;
 }
 .genericButtonContainer:hover {
     border: 3px solid black;

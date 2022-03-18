@@ -51,12 +51,14 @@
     /*border: 2px dashed blueviolet;*/
     border-right: 2px solid lightgrey;
     width: 15vw;
-    height: 98vh;
+    height: min-content;
     overflow: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #FBF9FF;
+    position: sticky;
+    top: 0;
 }
 
 .sidebarButton {
