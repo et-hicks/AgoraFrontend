@@ -205,21 +205,24 @@ const Clickable = () => {
     return (
         <div style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             margin: "auto",
             padding: "0.5vw 0.5vh",
-            // border: "3px solid blue",
-            width: "50vw",
-            justifyContent: "space-between",
+            border: "3px solid blue",
+            // width: "50vw",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
             borderRadius: "10px",
             boxShadow: "15px 10px 20px 1px lightgray",
             position: "sticky",
             top: "0",
             background: "#FBF9FF",
-            zIndex: "999"
+            zIndex: "9001"
         }}>
             <Contribute />
             <GenericButton displayText={"Submit"} />
+
+
         </div>
     )
 }
@@ -234,7 +237,7 @@ export default function Discussion() {
             display: "flex",
             flexDirection: "column",
             // width: "fit-content",
-            width: "53vw",
+            width: "40vw",
             borderLeft: "2px solid lightgrey",
             height: "98vh",
             paddingLeft: "0.5vw",

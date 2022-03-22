@@ -55,7 +55,7 @@ export const UserNameAndImage = ({userId = "Ethan Hicks"}: UserBannerProps) => {
             justifyContent: "flex-start",
             alignContent: "center",
             justifyItems: "center",
-            width: "50vw",
+            // width: "50vw",
             // border: "3px solid pink"
         }}>
             <UserImage />

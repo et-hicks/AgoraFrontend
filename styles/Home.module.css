@@ -128,9 +128,9 @@
 
 .threadArray {
   height: 85vh;
-  width: 30vw;
+  width: inherit;
   /*border: 4px solid grey;*/
-  margin: 1vw 1vh;
+  margin: auto 1vw 1vw 1vw;
   overflow: scroll;
 }
 

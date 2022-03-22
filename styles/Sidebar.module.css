@@ -51,6 +51,7 @@
     /*border: 2px dashed blueviolet;*/
     border-right: 2px solid lightgrey;
     width: 15vw;
+    min-width: max-content;
     height: min-content;
     overflow: scroll;
     display: flex;

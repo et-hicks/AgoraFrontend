@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import FollowThread from "../../buttons/FollowThread";
+import GenericButton from "../../buttons/GenericButton";
 
 const DynamicCardStatsPeople = dynamic(() =>
     import('../info/CardStats').then((module: any) => module.CardStatsPeople), {ssr: false}
@@ -24,7 +25,8 @@ export default function DiscussionStats() {
             <DynamicCardStatsPeople />
             <DynamicCardStatsOutlineEye />
             <DynamicCardStatsMessageDetail />
-            <FollowThread />
+            {/*<FollowThread />*/}
+            <GenericButton displayText={"Follow Thread"} />
         </div>
     );
 }

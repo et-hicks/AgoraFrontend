@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               display: "flex",
               flexDirection: "row",
               backgroundColor: "#FBF9FF",
-              // height: "100vh"
+              height: "min-content"
           }}>
               <Sidebar />
                {/*<div style={{ height: "99vh", width: "85vw"}} >*/}
