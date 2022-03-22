@@ -10,6 +10,7 @@
     height: 20vh;
     /*width: 37vw;*/
     width: inherit;
+    max-width: 95%;
     /*width: 90%;*/
     /*width: fit-content;*/
     border: 1px solid black;
