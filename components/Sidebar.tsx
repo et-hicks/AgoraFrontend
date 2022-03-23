@@ -1,8 +1,23 @@
 import styles from '../styles/Sidebar.module.css'
 // import {FaHome} from 'react-icons/fa';
 // import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
+import dynamic from "next/dynamic";
 
 // TODO: Place the sidebar component in a different area of the codebase as the code expands (for codebase scalability reasons)
+
+const AiOutlineQuestionCircle: any = dynamic(() =>
+    import("react-icons/all").then((module: any) => module.AiOutlineQuestionCircle), {ssr: false}
+);
+const BiHash: any = dynamic(() =>
+    import("react-icons/all").then((module: any) => module.BiHash), {ssr: false}
+);
+const MdOutlineSubject: any = dynamic(() =>
+    import("react-icons/all").then((module: any) => module.MdOutlineSubject), {ssr: false}
+);
+const FaHome: any = dynamic(() =>
+    import('react-icons/fa').then((module: any) => module.FaHome), {ssr: false}
+);
+
 
 
 const SidebarClickable = ({ icon, text = "tooltip" }: any) => (
@@ -94,14 +109,14 @@ export default function Sidebar() {
     return (
         <div className={styles.sidebarContainer}>
             <AgoraLogoComponent />
-            {/*<SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>*/}
-            {/*<SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>*/}
-            {/*<SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>*/}
+            <SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>
+            <SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>
+            <SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>
             <br />
             <br />
-            {/*<SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>*/}
-            {/*<TrendingCategories category={TrendingCategory.Hashtag} />*/}
-            {/*<SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>*/}
+            <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
+            <TrendingCategories category={TrendingCategory.Hashtag} />
+            <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
             <TrendingCategories category={TrendingCategory.Topics} />
             <TrendingCategories category={TrendingCategory.Hashtag} />
             <TrendingCategories category={TrendingCategory.Topics} />

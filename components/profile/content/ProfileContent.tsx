@@ -19,13 +19,14 @@ const GeneratedPost = () => {
 export default function ProfileContent() {
     return (
         <div style={{
-            border: "3px solid black",
+            // border: "3px solid black",
             width: "65vw",
             height: "min-content",
             display: "flex",
             flexDirection: "column",
             // overflow: "scroll"
         }}>
+
             <ThreadContentCard />
             <ThreadContentCard />
             <ThreadContentCard />

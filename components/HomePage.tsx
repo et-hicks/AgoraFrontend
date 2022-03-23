@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.css";
 import ThreadContentCard from "./cards/threads/ThreadContentCard";
 import dynamic from "next/dynamic";
 import GenericButton from "./buttons/GenericButton";
+import ProfileTabs from "./profile/tabs/ProfileTabs";
 
 const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
@@ -30,18 +31,19 @@ const ColumnOfThreads = () => {
     return (
         <div >
             <div style={{
-                // border: "3px dotted darkblue",
+                border: "3px dotted darkblue",
                 display: "flex",
                 flexDirection: "column",
                 height: "fit-content",
+                width: "25vw",
                 // width: "30vw",
                 // width: "45vw",
                 margin: "auto 1vw 1vw 1vw",
                 // justifyContent: "space-evenly"
             }}>
-                <AgoraCommunity />
+                {/*<AgoraCommunity />*/}
                 {/*<StartAThread />*/}
-                <GenericButton displayText={"Start a Thread"} />
+                {/*<GenericButton displayText={"Start a Thread"} />*/}
             </div>
             <div className={styles.threadArray}>
                 <ThreadContentCard />
@@ -79,12 +81,18 @@ export default function HomePage() {
             <div style={{
                 // border: `${showThreads ? "3px solid black" : "3px solid green"}`,
                 display: `${showThreads ? "flex" : "none"}`,
-                // display: "none"
+                // display: "none",
+                overflow: "scroll",
+                // border: "3px solid green",
+                height: "92vh",
+                // width: "40vw"
             }}>
                 <ColumnOfThreads />
             </div>
             <div style={{
-                width: "min-content",
+                // width: "min-content",
+                width: "inherit",
+                // width: "60vw"
                 // border: "3px dashed brown"
             }}>
                 {/*<Article />*/}

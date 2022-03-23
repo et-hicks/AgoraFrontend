@@ -21,7 +21,7 @@ export default function ProfilePage() {
             <Head>
                 <title> { user } </title>
             </Head>
-            <ProfileTabs />
+            {/*<ProfileTabs />*/}
 
             <div style={{
                 display: "flex",

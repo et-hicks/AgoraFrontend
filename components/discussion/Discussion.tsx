@@ -160,7 +160,8 @@ const ConversationHeader = () => {
         <div style={{
             display: "flex",
             flexDirection: "column",
-            width: "fit-content",
+            // width: "fit-content",
+            width: "inherit",
             alignItems: "center",
             fontSize: "3vh",
             // border: "3px solid red",
@@ -172,6 +173,8 @@ const ConversationHeader = () => {
 }
 
 const Contribute = () => {
+    // TODO: react state that allows for changing the columns of the
+    // TODO: contribute to something that works from the window
     return (
         <div style={{
             // border: "3px solid black",
@@ -187,14 +190,14 @@ const Contribute = () => {
                     // outline: `1px solid black`,
                     overflow: "auto",
                     resize: "vertical",
-                    minHeight: "10vh",
+                    minHeight: "5vh",
                     maxHeight: "50vh",
-                    width: "35vw",
+                    width: "inherit",
                     // borderRadius: "10px",
                 }}
                     name={"writeReply"}
-                    cols={50}
-                    rows={5}
+                    cols={75}
+                    rows={3}
                     placeholder={" Post in the discussion"}/>
             </form>
         </div>
@@ -210,12 +213,14 @@ const Clickable = () => {
             padding: "0.5vw 0.5vh",
             border: "3px solid blue",
             // width: "50vw",
+            width: "95%",
+            // width: "inherit",
             justifyContent: "flex-start",
             alignItems: "flex-start",
             borderRadius: "10px",
             boxShadow: "15px 10px 20px 1px lightgray",
-            position: "sticky",
-            top: "0",
+            // position: "sticky",
+            // top: "0",
             background: "#FBF9FF",
             zIndex: "9001"
         }}>
@@ -237,9 +242,11 @@ export default function Discussion() {
             display: "flex",
             flexDirection: "column",
             // width: "fit-content",
-            width: "40vw",
+            // width: "40vw",
+            width: "inherit",
             borderLeft: "2px solid lightgrey",
-            height: "98vh",
+            // height: "98vh",
+            height: "92vh",
             paddingLeft: "0.5vw",
             overflow: "scroll"
         }}>

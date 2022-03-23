@@ -20,8 +20,8 @@ const Home: NextPage = () => {
 
     return (
         <div>
-            {/*<HomePage />*/}
-            <ProfilePage />
+            <HomePage />
+            {/*<ProfilePage />*/}
         </div>
     )
 }

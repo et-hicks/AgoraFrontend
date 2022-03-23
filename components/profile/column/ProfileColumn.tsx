@@ -1,14 +1,15 @@
 import GenericButton from "../../buttons/GenericButton";
+import Image from "next/image";
 
 const ProfilePicture = () => {
     return (
         <div style={{
-            border: "3px solid black",
+            // border: "3px solid black",
             width: "inherit",
             height: "350px",
             borderRadius: "10px"
         }}>
-
+            <Image src="/quokka.jpeg" width="390px" height="350px"/>
         </div>
     );
 }
@@ -55,12 +56,32 @@ const UsersMostCommonTopics = () => {
             <div>
                 { user } most commonly posts in
             </div>
-            <GenericButton displayText={"Machine Learning"} />
+            <div style={{
+                margin: "auto 0vw auto 1vw"
+            }}>
+                <GenericButton displayText={"Machine Learning"} />
+            </div>
+            <div style={{
+                margin: "auto 0vw auto 1vw"
+            }}>
             <GenericButton displayText={"Political Science"} />
-            <GenericButton displayText={"Economics"} />
+            </div>
+            <div style={{
+                margin: "auto 0vw auto 1vw"
+            }}>
+                <GenericButton displayText={"Economics"} />
+            </div>
             <br />
-            <GenericButton displayText={"Explore all topics"} />
-            <GenericButton displayText={"Explore all hashtags"} />
+            <div style={{
+                margin: "auto 0vw auto 1vw"
+            }}>
+                <GenericButton displayText={"Explore all topics"} />
+            </div>
+            <div style={{
+                margin: "auto 0vw auto 1vw"
+            }}>
+                <GenericButton displayText={"Explore all hashtags"} />
+            </div>
         </div>
     );
 }
@@ -70,9 +91,10 @@ export default function ProfileColumn() {
     return (
         <div style={{
             // TODO: set a min and a max height here
-            border: "3px solid black",
+            borderLeft: "3px solid lightgrey",
             width: "20vw",
             height: "min-content",
+            // marginLeft: "0.5vw"
             // overflow: "scroll"
         }}>
             <ProfilePicture />

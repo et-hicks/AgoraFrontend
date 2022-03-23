@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { Provider } from 'react-redux'
 import store from "../app/store";
 import dynamic from "next/dynamic";
+import ProfileTabs from "../components/profile/tabs/ProfileTabs";
 // import RenderPDF from "../components/attachments/RenderPDF";
 
 // const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
@@ -12,6 +13,7 @@ import dynamic from "next/dynamic";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
       <Provider store={store}>
+          <ProfileTabs />
           <div style={{
               display: "flex",
               flexDirection: "row",

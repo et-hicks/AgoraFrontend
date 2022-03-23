@@ -69,8 +69,29 @@ export default function ThreadContentCard() {
     // huh???
     return (
         <div className={styles.contentCard}>
-            <div className={styles.imageContainer}>
-                <Image src="/quokka.jpeg" width="200px" height="150px" />
+            <div style={{
+                // border: "3px solid blue",
+                width: "25%",
+                marginLeft: "2%",
+                display: "flex"
+            }}>
+                <div style={{
+                    margin: "auto",
+                    // border: "3px dotted blue",
+                    // borderRadius: "15px",
+                    overflow: "hidden",
+                    width: "100%",
+                    height: "80%",
+                    display: "flex"
+                }}>
+                    <div style={{
+                        margin: "auto",
+                        // borderRadius: "10px",
+                        // overflow: "hidden"
+                    }}>
+                        <Image src="/quokka.jpeg" width="200px" height="150px" />
+                    </div>
+                </div>
             </div>
             {/*<div className={styles.contentCardContainer}> */}
                 <div className={styles.contentContainer}>
