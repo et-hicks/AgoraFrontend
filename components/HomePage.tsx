@@ -8,6 +8,7 @@ import ThreadContentCard from "./cards/threads/ThreadContentCard";
 import dynamic from "next/dynamic";
 import GenericButton from "./buttons/GenericButton";
 import ProfileTabs from "./profile/tabs/ProfileTabs";
+import StartAThread from "./buttons/StartAThread";
 
 const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
@@ -16,35 +17,38 @@ const AgoraCommunity = () => {
         <div >
             <div style={{
                 margin: "auto",
-                fontSize: "4vh",
+                fontSize: "3vh",
                 fontWeight: "bold",
             }}>
-                Catalog of Content
+                Home Page: Popular and Trending Posts and Discussions
             </div>
         </div>
     );
 }
 
-
+const ThreadColumnHeader = () => {
+    return (
+        <div style={{
+            border: "3px dotted darkblue",
+            display: "flex",
+            flexDirection: "column",
+            height: "fit-content",
+            // width: "25vw",
+            // width: "30vw",
+            // width: "45vw",
+            margin: "auto 1vw 1vw 1vw",
+            // justifyContent: "space-evenly"
+        }}>
+            <AgoraCommunity />
+            <GenericButton displayText={"Start a Thread"} />
+        </div>
+    );
+}
 
 const ColumnOfThreads = () => {
     return (
         <div >
-            <div style={{
-                border: "3px dotted darkblue",
-                display: "flex",
-                flexDirection: "column",
-                height: "fit-content",
-                width: "25vw",
-                // width: "30vw",
-                // width: "45vw",
-                margin: "auto 1vw 1vw 1vw",
-                // justifyContent: "space-evenly"
-            }}>
-                {/*<AgoraCommunity />*/}
-                {/*<StartAThread />*/}
-                {/*<GenericButton displayText={"Start a Thread"} />*/}
-            </div>
+            <ThreadColumnHeader />
             <div className={styles.threadArray}>
                 <ThreadContentCard />
                 <ThreadContentCard />
