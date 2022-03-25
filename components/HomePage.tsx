@@ -29,7 +29,7 @@ const AgoraCommunity = () => {
 const ThreadColumnHeader = () => {
     return (
         <div style={{
-            border: "3px dotted darkblue",
+            // border: "3px dotted darkblue",
             display: "flex",
             flexDirection: "column",
             height: "fit-content",
