@@ -70,7 +70,8 @@ const DiscussionContributions = () => {
     // TODO: Use react query to load the bottom 10 discussions, appending to the top as people scroll up
     return (
         <div style={{
-            // border: "3px solid red"
+            // border: "3px solid red",
+            width: "95%"
         }}>
             <ContributionContainer userId={"Vlad the Impaler"}/>
             <ContributionContainer userId={"Ethan Hicks"}/>
@@ -85,7 +86,7 @@ const DiscussionContributions = () => {
 const WhoIsHere = () => {
     return (
         <div style={{
-            // border: "2px dashed orange",
+            // border: "2px dashed red",
             // height: "98vh",
             width: "fit-content",
             // overflow: "scroll"
@@ -161,7 +162,7 @@ const ConversationHeader = () => {
             display: "flex",
             flexDirection: "column",
             // width: "fit-content",
-            width: "inherit",
+            width: "95%",
             alignItems: "center",
             fontSize: "3vh",
             // border: "3px solid red",
@@ -178,27 +179,27 @@ const Contribute = () => {
     return (
         <div style={{
             // border: "3px solid black",
-            margin: "auto"
-
+            margin: "auto",
+            width: "95%"
         }}>
             <form>
                 <textarea style={{
                     fontSize: "1rem",
                     lineHeight: "1.5em",
                     fontFamily: "Roboto",
-                    outline: "none",
-                    // outline: `1px solid black`,
+                    // outline: "none",
+                    outline: `1px solid black`,
                     overflow: "auto",
                     resize: "vertical",
                     minHeight: "5vh",
                     maxHeight: "50vh",
-                    width: "inherit",
+                    width: "100%",
                     // borderRadius: "10px",
                 }}
                     name={"writeReply"}
-                    cols={75}
+
                     rows={3}
-                    placeholder={" Post in the discussion"}/>
+                    placeholder={"Post in the discussion"}/>
             </form>
         </div>
     )
@@ -242,8 +243,8 @@ export default function Discussion() {
             display: "flex",
             flexDirection: "column",
             // width: "fit-content",
-            // width: "40vw",
-            width: "inherit",
+            width: "49vw",
+            // width: "inherit",
             borderLeft: "2px solid lightgrey",
             // height: "98vh",
             height: "92vh",

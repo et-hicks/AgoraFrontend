@@ -19,8 +19,8 @@ export default function DiscussionStats() {
             flexDirection: "row",
             justifyContent: "space-evenly",
             padding: "1vw 1vh",
-            width: "initial",
-            // border: "3px solid pink",
+            width: "95%",
+            // border: "3px solid orange",
         }}>
             <DynamicCardStatsPeople />
             <DynamicCardStatsOutlineEye />

@@ -18,7 +18,7 @@
     /*border-radius: 2vw;*/
     border-radius: 15px;
     display: flex;
-    /*margin: 1vw 1vh;*/
+    margin: 2.5%;
 }
 
 .contentCardContainer {
@@ -79,8 +79,8 @@
 }
 
 .contentDescription {
-    /*height: 9vh;*/
-    /*width: 16vw;*/
+    height: 9vh;
+    width: 16vw;
     max-width: 100%;
     max-height: 40%;
     /*border: 4px dotted grey;*/
@@ -89,7 +89,8 @@
     word-wrap: anywhere;
     margin-right: 1vw;
     /*display: block;*/
-    line-height: 1em; /* a */
+    line-height: 1em;
+    font-size: 12pt;
 }
 
 .statsArray {

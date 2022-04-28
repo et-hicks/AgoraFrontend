@@ -1,4 +1,7 @@
 import {AiOutlineEye, BiMessageDetail, BsPeople} from "react-icons/all";
+import {Grid} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import {blue} from "@mui/material/colors";
 
 const CardStats = ({ icon, number = 69 }: any) => (
     <div>
@@ -10,6 +13,19 @@ const CardStats = ({ icon, number = 69 }: any) => (
         </div>
     </div>
 );
+
+const CardStatsGridVersion = () => {
+    return <>
+        <Grid container direction="row" alignItems="center">
+            <Grid item>
+                <DeleteIcon  sx={{ color: blue[200] }}/>
+            </Grid>
+            <Grid item>
+                revolve
+            </Grid>
+        </Grid>
+    </>
+}
 
 const CardStatsPeople = () => {
     return (
@@ -32,6 +48,7 @@ const CardStatsMessageDetail = () => {
 export default CardStats;
 
 export {
+    CardStatsGridVersion,
     CardStatsPeople,
     CardStatsOutlineEye,
     CardStatsMessageDetail
