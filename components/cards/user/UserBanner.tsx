@@ -1,6 +1,9 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import {UserBannerProps} from "../../../@types";
+import {Avatar, Card, CardHeader, IconButton} from "@mui/material";
+import {red} from "@mui/material/colors";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 
 const DynamicCardStatsPeople = dynamic(() =>
@@ -48,20 +51,23 @@ const UserName = ({userId = "Ethan Hicks"}: UserBannerProps) => {
 
 export const UserNameAndImage = ({userId = "Ethan Hicks"}: UserBannerProps) => {
     return (
-        <div style={{
-            margin: "auto",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            alignContent: "center",
-            justifyItems: "center",
-            // width: "50vw",
-            // border: "3px solid pink"
-        }}>
-            <UserImage />
-            <UserName userId={userId} />
-        </div>
-    )
+        <Card sx={{ overflow: 'visible' }}>
+            <CardHeader
+                avatar={
+                    <Avatar sx={{ bgcolor: red[500], width: 56, height: 56 }} aria-label="recipe">
+                        R
+                    </Avatar>
+                }
+                action={
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
+                }
+                title={userId}
+                subheader="September 14, 2016"
+            />
+        </Card>
+    );
 }
 
 

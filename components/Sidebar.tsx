@@ -2,6 +2,8 @@ import styles from '../styles/Sidebar.module.css'
 // import {FaHome} from 'react-icons/fa';
 // import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
 import dynamic from "next/dynamic";
+import {ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Typography} from "@mui/material";
+import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
 
 // TODO: Place the sidebar component in a different area of the codebase as the code expands (for codebase scalability reasons)
 
@@ -106,26 +108,62 @@ const TrendingCategories = ({category}: any) => {
 }
 
 export default function Sidebar() {
+    // return (
+    //     <div className={styles.sidebarContainer}>
+    //         {/*<AgoraLogoComponent />*/}
+    //         <SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>
+    //         <SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>
+    //         <SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>
+    //         <br />
+    //         <br />
+    //         <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
+    //         <TrendingCategories category={TrendingCategory.Hashtag} />
+    //         <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
+    //         <TrendingCategories category={TrendingCategory.Topics} />
+    //         <TrendingCategories category={TrendingCategory.Hashtag} />
+    //
+    //
+    //     </div>
+    // )
     return (
-        <div className={styles.sidebarContainer}>
-            <AgoraLogoComponent />
-            <SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>
-            <SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>
-            <SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>
-            <br />
-            <br />
-            <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
-            <TrendingCategories category={TrendingCategory.Hashtag} />
-            <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
-            <TrendingCategories category={TrendingCategory.Topics} />
-            <TrendingCategories category={TrendingCategory.Hashtag} />
-            <TrendingCategories category={TrendingCategory.Topics} />
-            <TrendingCategories category={TrendingCategory.Hashtag} />
-            <TrendingCategories category={TrendingCategory.Topics} />
-            <TrendingCategories category={TrendingCategory.Hashtag} />
-            <TrendingCategories category={TrendingCategory.Topics} />
-
-
-        </div>
-    )
+        // <Paper sx={{ width: 320, maxWidth: '100%' }}>
+        <Paper sx={{ width: "minContent" }}>
+            <MenuList>
+                <MenuItem>
+                    <ListItemIcon>
+                        <ContentCut fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Cut</ListItemText>
+                    <Typography variant="body2" color="text.secondary">
+                        ⌘X
+                    </Typography>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <ContentCopy fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Copy</ListItemText>
+                    <Typography variant="body2" color="text.secondary">
+                        ⌘C
+                    </Typography>
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <ContentPaste fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Paste</ListItemText>
+                    <Typography variant="body2" color="text.secondary">
+                        ⌘V
+                    </Typography>
+                </MenuItem>
+                <Divider />
+                <MenuItem>
+                    <ListItemIcon>
+                        <Cloud fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText>Web Clipboard</ListItemText>
+                </MenuItem>
+            </MenuList>
+        </Paper>
+    );
 }

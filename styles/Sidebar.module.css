@@ -50,7 +50,7 @@
 .sidebarContainer {
     /*border: 2px dashed blueviolet;*/
     border-right: 2px solid lightgrey;
-    width: 15vw;
+    /*width: 45vw;*/
     min-width: max-content;
     height: 93vh;
     overflow: scroll;

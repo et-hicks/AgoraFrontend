@@ -1,7 +1,6 @@
 import {useSelector} from "react-redux";
 import {AppState} from "../app/store";
 import Head from "next/head";
-import Discussion from "./discussion/Discussion";
 import Article from "./article/Article";
 import styles from "../styles/Home.module.css";
 import ThreadContentCard from "./cards/threads/ThreadContentCard";
@@ -28,15 +27,15 @@ export default function HomePage() {
                 <title> Agora </title>
             </Head>
             <ColumnOfThreads />
-            <div style={{
-                // width: "min-content",
-                // width: "inherit",
-                width: "50vw",
-                // border: "3px dashed brown"
-            }}>
-                {/*<Article />*/}
-                <Discussion /> {/*TODO: This should be revisited*/}
-            </div>
+            {/*<div style={{*/}
+            {/*    // width: "min-content",*/}
+            {/*    // width: "inherit",*/}
+            {/*    width: "50vw",*/}
+            {/*    // border: "3px dashed brown"*/}
+            {/*}}>*/}
+            {/*    /!*<Article />*!/*/}
+            {/*    <Discussion /> /!*TODO: This should be revisited*!/*/}
+            {/*</div>*/}
             {/*<div style={{*/}
             {/*    border: `${showThreads ? "3px solid black" : "3px solid green"}`,*/}
             {/*    display: `${!showThreads ? "flex" : "none"}`,*/}

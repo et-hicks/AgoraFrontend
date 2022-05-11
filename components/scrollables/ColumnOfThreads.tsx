@@ -40,7 +40,7 @@ const ThreadColumnHeader = () => {
 }
 
 export default function ColumnOfThreads() {
-    const showThreads = useSelector((state: AppState) => state.expander.expand);
+    // const showThreads = useSelector((state: AppState) => state.expander.expand);
 
     // <div className={styles.threadArray}>
     //                 <ThreadContentCard />
@@ -50,15 +50,16 @@ export default function ColumnOfThreads() {
     return (
         <div style={{
             // border: `${showThreads ? "3px solid black" : "3px solid green"}`,
-            display: `${showThreads ? "flex" : "none"}`,
+            display: "flex",
             // display: "none",
             flexDirection: "column",
-            overflow: "scroll",
+            paddingLeft: "1vw",
+            // overflow: "scroll",
             // border: "3px solid green",
-            height: "92vh",
-            width: "35vw"
+            // height: "92vh",
+            // width: "35vw"
         }}>
-            <ThreadColumnHeader />
+            {/*<ThreadColumnHeader />*/}
             <ThreadContentCard />
             <br />
             <ThreadContentCard />
