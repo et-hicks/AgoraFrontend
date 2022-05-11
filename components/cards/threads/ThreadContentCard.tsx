@@ -79,12 +79,15 @@ export default function ThreadContentCard() {
     };
 
 
-    // const theme = useTheme();
+    const handleThreadCardClick = (e: any) => {
+        e.preventDefault()
+        console.log(e)
+    }
 
 
 
     const builtThing = (
-        <Card sx={{ overflow: 'visible' }}>
+        <Card sx={{ overflow: 'visible', cursor: "pointer" }} onClick={handleThreadCardClick} >
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

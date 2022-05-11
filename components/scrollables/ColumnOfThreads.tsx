@@ -3,6 +3,9 @@ import ThreadContentCard from "../cards/threads/ThreadContentCard";
 import GenericButton from "../buttons/GenericButton";
 import {useSelector} from "react-redux";
 import {AppState} from "../../app/store";
+import {useEffect} from "react";
+import {ThreadPageResponse, UserDisplayInfo} from "../../@types";
+
 
 const AgoraCommunity = () => {
     return (
@@ -46,6 +49,30 @@ export default function ColumnOfThreads() {
     //                 <ThreadContentCard />
     //                 <ThreadContentCard />
     //             </div>
+
+    // TODO: Paginate this i guess
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/posts`)
+            .then((response) => console.log(response));
+
+        const contributor: UserDisplayInfo = {
+            username: "ethan",
+            userPageURL: "/path",
+            contributeLevel: 5
+        }
+
+        const threadResponse: ThreadPageResponse = {
+            title: "title",
+            description: "this is the description",
+            createdAt: 0,
+            creator: contributor,
+            contributors: [
+                contributor,
+                contributor
+            ]
+        }
+
+    }, []);
 
     return (
         <div style={{

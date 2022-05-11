@@ -2,8 +2,19 @@ import styles from '../styles/Sidebar.module.css'
 // import {FaHome} from 'react-icons/fa';
 // import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
 import dynamic from "next/dynamic";
-import {ListItemIcon, ListItemText, MenuItem, MenuList, Paper, Typography} from "@mui/material";
+import {
+    Button,
+    ListItemIcon,
+    ListItemText,
+    MenuItem,
+    MenuList,
+    Pagination,
+    Paper,
+    Stack,
+    Typography
+} from "@mui/material";
 import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
+import {useState} from "react";
 
 // TODO: Place the sidebar component in a different area of the codebase as the code expands (for codebase scalability reasons)
 
@@ -125,6 +136,14 @@ export default function Sidebar() {
     //
     //     </div>
     // )
+    const [page, setPage] = useState(1);
+    const handlePageClickBack = (event: any) => {
+
+        setPage(Math.max(page - 1, 1));
+    };
+    const handlePageClickForward = (event: any) => {
+        setPage(page + 1);
+    };
     return (
         // <Paper sx={{ width: 320, maxWidth: '100%' }}>
         <Paper sx={{ width: "minContent" }}>
@@ -164,6 +183,11 @@ export default function Sidebar() {
                     <ListItemText>Web Clipboard</ListItemText>
                 </MenuItem>
             </MenuList>
+            <Stack direction="row" spacing={2}>
+                <Button variant="outlined" onClick={handlePageClickBack}>Back</Button>
+                <Typography>{page}</Typography>
+                <Button variant="outlined" onClick={handlePageClickForward}>Next</Button>
+            </Stack>
         </Paper>
     );
 }
