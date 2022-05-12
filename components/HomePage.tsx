@@ -9,9 +9,13 @@ import GenericButton from "./buttons/GenericButton";
 import ProfileTabs from "./profile/tabs/ProfileTabs";
 import StartAThread from "./buttons/StartAThread";
 import ColumnOfThreads from "./scrollables/ColumnOfThreads";
+import Discussion from "../pages/discussion/[id]";
 
 const RenderPDF = dynamic(import("../components/attachments/RenderPDF"), {ssr: false})
 
+// citing
+// internal profile settings
+// likes
 
 
 export default function HomePage() {
@@ -34,7 +38,7 @@ export default function HomePage() {
             {/*    // border: "3px dashed brown"*/}
             {/*}}>*/}
             {/*    /!*<Article />*!/*/}
-            {/*    <Discussion /> /!*TODO: This should be revisited*!/*/}
+            {/*    <Discussion />*/}
             {/*</div>*/}
             {/*<div style={{*/}
             {/*    border: `${showThreads ? "3px solid black" : "3px solid green"}`,*/}

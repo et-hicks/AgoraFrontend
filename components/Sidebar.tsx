@@ -3,7 +3,8 @@ import styles from '../styles/Sidebar.module.css'
 // import {AiOutlineQuestionCircle, BiHash, MdOutlineSubject} from "react-icons/all";
 import dynamic from "next/dynamic";
 import {
-    Button,
+    Box,
+    Button, Card, CardActionArea, CardContent, CardMedia,
     ListItemIcon,
     ListItemText,
     MenuItem,
@@ -15,6 +16,12 @@ import {
 } from "@mui/material";
 import {Cloud, ContentCopy, ContentCut, ContentPaste} from "@mui/icons-material";
 import {useState} from "react";
+import HomeIcon from '@mui/icons-material/Home';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import ForumIcon from '@mui/icons-material/Forum';
+import RecommendIcon from '@mui/icons-material/Recommend';
+import LoginIcon from '@mui/icons-material/Login';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 // TODO: Place the sidebar component in a different area of the codebase as the code expands (for codebase scalability reasons)
 
@@ -119,75 +126,87 @@ const TrendingCategories = ({category}: any) => {
 }
 
 export default function Sidebar() {
-    // return (
-    //     <div className={styles.sidebarContainer}>
-    //         {/*<AgoraLogoComponent />*/}
-    //         <SidebarButton icon={ <FaHome size="20" />} text={"Home"}/>
-    //         <SidebarButton icon={ <AiOutlineQuestionCircle size="20" />} text={"Why Us"}/>
-    //         <SidebarButton icon={ <MdOutlineSubject size="20" />} text={"About"}/>
-    //         <br />
-    //         <br />
-    //         <SidebarCategory icon={ <BiHash /> } text={"Trending Topics"}/>
-    //         <TrendingCategories category={TrendingCategory.Hashtag} />
-    //         <SidebarCategory icon={ <BiHash /> } text={"Trending Hashtags"}/>
-    //         <TrendingCategories category={TrendingCategory.Topics} />
-    //         <TrendingCategories category={TrendingCategory.Hashtag} />
-    //
-    //
-    //     </div>
-    // )
-    const [page, setPage] = useState(1);
-    const handlePageClickBack = (event: any) => {
 
-        setPage(Math.max(page - 1, 1));
-    };
-    const handlePageClickForward = (event: any) => {
-        setPage(page + 1);
-    };
+
+    const notLoggedIn = (<>
+        <Divider />
+    <MenuItem>
+        <ListItemIcon>
+            <LoginIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText>Login</ListItemText>
+    </MenuItem>
+    <MenuItem>
+        <ListItemIcon>
+            <PersonAddIcon fontSize="small" />
+        </ListItemIcon>
+        <ListItemText>Sign Up</ListItemText>
+    </MenuItem>
+</>
+    );
+
+
     return (
         // <Paper sx={{ width: 320, maxWidth: '100%' }}>
-        <Paper sx={{ width: "minContent" }}>
+        <Paper sx={{ width: "20vw", maxHeight: "minContent" }}>
             <MenuList>
                 <MenuItem>
                     <ListItemIcon>
-                        <ContentCut fontSize="small" />
+                        <HomeIcon fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>Cut</ListItemText>
-                    <Typography variant="body2" color="text.secondary">
-                        ⌘X
-                    </Typography>
+                    <ListItemText>Home</ListItemText>
+                    {/*<Typography variant="body2" color="text.secondary">*/}
+                    {/*    ⌘X*/}
+                    {/*</Typography>*/}
                 </MenuItem>
                 <MenuItem>
                     <ListItemIcon>
-                        <ContentCopy fontSize="small" />
+                        <ForumIcon fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>Copy</ListItemText>
-                    <Typography variant="body2" color="text.secondary">
-                        ⌘C
-                    </Typography>
+                    <ListItemText>FAQ</ListItemText>
+                    {/*<Typography variant="body2" color="text.secondary">*/}
+                    {/*    ⌘X*/}
+                    {/*</Typography>*/}
                 </MenuItem>
                 <MenuItem>
                     <ListItemIcon>
-                        <ContentPaste fontSize="small" />
+                        <QuestionMarkIcon fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>Paste</ListItemText>
-                    <Typography variant="body2" color="text.secondary">
-                        ⌘V
-                    </Typography>
+                    <ListItemText>Why Agora</ListItemText>
+                    {/*<Typography variant="body2" color="text.secondary">*/}
+                    {/*    ⌘C*/}
+                    {/*</Typography>*/}
                 </MenuItem>
-                <Divider />
                 <MenuItem>
                     <ListItemIcon>
-                        <Cloud fontSize="small" />
+                        <RecommendIcon fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>Web Clipboard</ListItemText>
+                    <ListItemText>Popular Categories</ListItemText>
+                    {/*<Typography variant="body2" color="text.secondary">*/}
+                    {/*    ⌘V*/}
+                    {/*</Typography>*/}
                 </MenuItem>
+                {notLoggedIn}
             </MenuList>
-            <Stack direction="row" spacing={2}>
-                <Button variant="outlined" onClick={handlePageClickBack}>Back</Button>
-                <Typography>{page}</Typography>
-                <Button variant="outlined" onClick={handlePageClickForward}>Next</Button>
-            </Stack>
+            <br />
+            <Card sx={{ maxWidth: "100%" }}>
+                <CardActionArea>
+                    <CardMedia
+                        component="img"
+                        height="140"
+                        image="https://i.pinimg.com/originals/47/0a/19/470a19a36904fe200610cc1f41eb00d9.jpg"
+                        alt="green iguana"
+                    />
+                    <CardContent>
+                        {/*<Typography gutterBottom variant="h5" component="div">*/}
+                        {/*    Ethan Hicks*/}
+                        {/*</Typography>*/}
+                        <Typography variant="body2" color="text.secondary">
+                            Ethan Hicks
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
         </Paper>
     );
 }

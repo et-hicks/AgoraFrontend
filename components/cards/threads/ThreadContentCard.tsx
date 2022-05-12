@@ -24,6 +24,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {useState} from "react";
+import {ThreadPageResponse} from "../../../@types";
 
 
 const DynamicCardStatsPeople = dynamic(() =>
@@ -40,44 +41,12 @@ const CardStatsGridVersion = dynamic(() =>
     import('../info/CardStats').then((module: any) => module.CardStatsGridVersion), {ssr: false}
 );
 
-const ContentDescription = () => {
-    return (
-        <div className={styles.contentDescription}>
-            Description description description
-            description description description
-            Description description description
-
-        </div>
-    );
-}
-
-const ConversationTitle = () => {
-    return (
-        <div className={styles.contentTitle}>
-            Conversation Title
-        </div>
-    );
-}
-
-const StatsArray = () => {
-    return (
-        <div className={styles.statsArray}>
-            <DynamicCardStatsPeople />
-            <DynamicCardStatsOutlineEye />
-            <DynamicCardStatsMessageDetail />
-        </div>
-    );
-}
 
 
 
-export default function ThreadContentCard() {
+export default function ThreadContentCard({title, description, createdAt, creator, contributors}: ThreadPageResponse) {
     const [expanded, setExpanded] = useState(false);
-
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-
+    const [underlined, setUnderline] = useState(false)
 
     const handleThreadCardClick = (e: any) => {
         e.preventDefault()
@@ -85,13 +54,22 @@ export default function ThreadContentCard() {
     }
 
 
+    const createdDate = new Date(createdAt)
+
+    function changeUnderline(e: any) {
+        e.target.style.textDecoration = 'underline';
+    }
+
+    function changeText(e: any) {
+        e.target.style.textDecoration = 'none';
+    }
 
     const builtThing = (
-        <Card sx={{ overflow: 'visible', cursor: "pointer" }} onClick={handleThreadCardClick} >
+        <Card sx={{ overflow: 'visible', margin: "1vw" }} >
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        R
+                        {creator.username[0]}
                     </Avatar>
                 }
                 action={
@@ -99,60 +77,46 @@ export default function ThreadContentCard() {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
+                title={creator.username}
+                subheader={createdDate.toDateString()}
             />
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', cursor: "pointer"}} className={styles.txt}>
             <CardMedia
                 component="img"
                 sx={{ width: 151 }}
                 image="https://6.viki.io/image/9662734afa754a9aa36edbadabb207ce.jpeg?s=900x600&e=t"
                 alt="from space album cover"
             />
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column',  }} >
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Lizard
+                        {title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-
+                        {description}
                     </Typography>
                 </CardContent>
             </Box>
         </Box>
-            <Box>
-                <CardActions>
-                    <Tooltip title="Delete">
-                        <IconButton>
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
-                    <Button size="small">Learn 1More</Button>
-                    {/*<Grid container direction="row" alignItems="center">*/}
-                    {/*    <Grid item>*/}
-                    {/*        <DeleteIcon  sx={{ color: pink[500] }}/>*/}
-                    {/*    </Grid>*/}
-                    {/*    <Grid item>*/}
-                    {/*        revolve*/}
-                    {/*    </Grid>*/}
-                    {/*</Grid>*/}
-                    <CardStatsGridVersion />
-                    <CardStatsGridVersion />
-                    <Button size="small">Learn 1More</Button>
-                    <Tooltip title="Delete">
-                        <IconButton>
-                            <DeleteIcon />
-                        </IconButton>
-                    </Tooltip>
-                    {/*<Tooltip title="Delete">*/}
-                    {/*    <IconButton>*/}
-                    {/*        <DeleteIcon />*/}
-                    {/*    </IconButton>*/}
-                    {/*</Tooltip>*/}
-                </CardActions>
-            </Box>
+            {/* TODO: Create the card actions */}
+            {/*<Box>*/}
+            {/*    <CardActions>*/}
+            {/*        <Tooltip title="Delete">*/}
+            {/*            <IconButton>*/}
+            {/*                <DeleteIcon />*/}
+            {/*            </IconButton>*/}
+            {/*        </Tooltip>*/}
+            {/*        <Button size="small">Learn 1More</Button>*/}
+            {/*        <CardStatsGridVersion />*/}
+            {/*        <CardStatsGridVersion />*/}
+            {/*        <Button size="small">Learn 1More</Button>*/}
+            {/*        <Tooltip title="Delete">*/}
+            {/*            <IconButton>*/}
+            {/*                <DeleteIcon />*/}
+            {/*            </IconButton>*/}
+            {/*        </Tooltip>*/}
+            {/*    </CardActions>*/}
+            {/*</Box>*/}
 
         </Card>
     );

@@ -105,3 +105,11 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.txt {
+    text-decoration: none;
+}
+
+.txt:hover {
+    text-decoration: underline;
+}

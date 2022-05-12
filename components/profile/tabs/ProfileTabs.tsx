@@ -156,7 +156,7 @@ import {useRouter} from "next/router";
 // }
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Explore', 'Trending Topics', 'Hashtags'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Search = styled('div')(({ theme }) => ({
@@ -200,6 +200,10 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 const ResponsiveAppBar = () => {
+
+    // if globally logged in
+    // append to the pages array "start a thread"
+
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] =  useState<null | HTMLElement>(null);
 

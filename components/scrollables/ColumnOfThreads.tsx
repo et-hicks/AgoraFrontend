@@ -3,76 +3,65 @@ import ThreadContentCard from "../cards/threads/ThreadContentCard";
 import GenericButton from "../buttons/GenericButton";
 import {useSelector} from "react-redux";
 import {AppState} from "../../app/store";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {ThreadPageResponse, UserDisplayInfo} from "../../@types";
+import {element} from "prop-types";
+import {Button, Card, Stack, Typography} from "@mui/material";
 
 
-const AgoraCommunity = () => {
-    return (
-        <div >
-            <div style={{
-                margin: "auto",
-                fontSize: "3vh",
-                fontWeight: "bold",
-            }}>
-                Agora Community
-            </div>
-        </div>
-    );
-}
-
-const ThreadColumnHeader = () => {
-    return (
-        <div style={{
-            border: "3px dotted darkblue",
-            display: "flex",
-            flexDirection: "row",
-            height: "fit-content",
-            // margin: "auto",
-            width: "95%",
-            // width: "25vw",
-            // width: "30vw",
-            // width: "45vw",
-            margin: "2.5% 2.5%",
-            justifyContent: "space-evenly"
-        }}>
-            <AgoraCommunity />
-            <GenericButton displayText={"Start a Thread"} />
-        </div>
-    );
+const threadResponseMapper = (threadDisplayInfo: ThreadPageResponse, key: number): JSX.Element => {
+    return (<ThreadContentCard
+        key={key}
+        title={threadDisplayInfo.title}
+        description={threadDisplayInfo.description}
+        createdAt={threadDisplayInfo.createdAt}
+        creator={threadDisplayInfo.creator}
+        contributors={threadDisplayInfo.contributors}
+    />);
 }
 
 export default function ColumnOfThreads() {
-    // const showThreads = useSelector((state: AppState) => state.expander.expand);
 
-    // <div className={styles.threadArray}>
-    //                 <ThreadContentCard />
-    //                 <ThreadContentCard />
-    //             </div>
+    const [displayVals, setDisplayVals] = useState<JSX.Element[]>([<div key={"unused"}>Loading...</div>])
+    const [threadData, setThreadData] = useState<ThreadPageResponse[]>([])
 
     // TODO: Paginate this i guess
+
+    // inital fetch for getting the data
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/posts`)
-            .then((response) => console.log(response));
-
-        const contributor: UserDisplayInfo = {
-            username: "ethan",
-            userPageURL: "/path",
-            contributeLevel: 5
-        }
-
-        const threadResponse: ThreadPageResponse = {
-            title: "title",
-            description: "this is the description",
-            createdAt: 0,
-            creator: contributor,
-            contributors: [
-                contributor,
-                contributor
-            ]
-        }
+        fetch("http://localhost:8080/findPage", {
+            method: 'POST',
+            mode:'cors',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Content-Type': 'application/json'
+            },
+            body: '{}'
+        })
+            .then((res: Response) => res.json())
+            .then((result: ThreadPageResponse[]) => setThreadData(result))
 
     }, []);
+
+    // For processing the data
+    useEffect(() => {
+        const displayVals: JSX.Element[] = []
+        threadData.map((element, index) => {
+            displayVals.push(threadResponseMapper(element, index))
+       })
+
+        setDisplayVals(displayVals)
+        console.log("fetched")
+    }, [threadData])
+
+    const [page, setPage] = useState(1);
+    const handlePageClickBack = (event: any) => {
+
+        setPage(Math.max(page - 1, 1));
+    };
+    const handlePageClickForward = (event: any) => {
+        setPage(page + 1);
+    };
 
     return (
         <div style={{
@@ -80,26 +69,18 @@ export default function ColumnOfThreads() {
             display: "flex",
             // display: "none",
             flexDirection: "column",
-            paddingLeft: "1vw",
+            padding: "1vw",
             // overflow: "scroll",
             // border: "3px solid green",
             // height: "92vh",
             // width: "35vw"
         }}>
-            {/*<ThreadColumnHeader />*/}
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
-            <br />
-            <ThreadContentCard />
+            {displayVals}
+            <Stack direction="row" spacing={2} sx={{mt: "auto"}}>
+                <Button variant="outlined" onClick={handlePageClickBack}>Back</Button>
+                <Typography>{page}</Typography>
+                <Button variant="outlined" onClick={handlePageClickForward}>Next</Button>
+            </Stack>
         </div>
     );
 }
